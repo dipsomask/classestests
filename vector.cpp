@@ -57,6 +57,17 @@ void print(const vector& v){
     cout << endl;
 }
 
+void vector::print_in(){
+    if(size == 0){
+        cout << "null" << endl;
+        return;
+    }
+    for(int i = 0; i < size; i++){
+        cout << vec[i] << " ";
+    }
+    cout << endl;
+}
+
 vector& vector::plus(vector& other){
     if(other.vec == nullptr || other.size != size){
         throw range_error("using null ptr or differnt sizes");

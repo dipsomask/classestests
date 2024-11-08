@@ -1,6 +1,6 @@
 #include <iostream>
-#include "vector/vector.h"
-//#include "matrix/matrix.h"
+#include "vector.h"
+#include "matrix.h"
 
 using namespace std;
 
@@ -31,8 +31,22 @@ int main(){
         int nc_elem = v3[2];
 
         cout << c_elem << " " << nc_elem << endl;
-        
 
+
+        int** mass2 = new int*[3];
+        for(int i = 0; i<3; i++){
+            mass2[i] = new int[3];
+            for(int j = 0; j<3; j++){
+                mass2[i][j] = i+j;
+            }
+        }
+        matrix matr1(3, 3, mass2);
+        matr1.print_in();
+        
+        for(int i = 0; i<3; i++){
+            delete[] mass2[i];
+        }
+        delete[] mass2;
         delete[] mass;
     }
     catch(const std::exception& e)

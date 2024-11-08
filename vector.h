@@ -11,6 +11,7 @@ public:
     vector(vector&& other) noexcept; //replace
     vector(const vector& other); //copy
     friend void print(const vector& v);
+    virtual void print_in();
     vector& plus(vector& other);
     vector& operator+=(const vector& other);
     vector& operator=(vector&& other) noexcept;
@@ -21,4 +22,5 @@ public:
 private:
     int size;
     int*vec;
+    
 };
